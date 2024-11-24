@@ -3,7 +3,6 @@
 import { personalData } from "@/utils/data/personal-data";
 import Image from "next/image";
 
-
 function AboutSection() {
   return (
     <div id="about" className="my-12 lg:my-16 relative">
@@ -22,18 +21,36 @@ function AboutSection() {
             {personalData.description}
           </p>
         </div>
+
+        {/* YouTube Video Embed */}
+        <div className="flex justify-center order-1 lg:order-2">
+          <div className="w-full max-w-lg aspect-w-16 aspect-h-9">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/hBxYOweCBbI"
+              title="YouTube video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="rounded-lg transition-all duration-1000 hover:scale-105"
+            ></iframe>
+          </div>
+        </div>
+
+        {/* Profile Image */}
         <div className="flex justify-center order-1 lg:order-2">
           <Image
             src={personalData.profile}
             width={280}
             height={280}
-            alt="Abu Said"
+            alt="Kartik"
             className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer"
           />
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default AboutSection;
